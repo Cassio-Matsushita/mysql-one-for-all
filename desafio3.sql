@@ -1,11 +1,12 @@
 SELECT
-COUNT(cancoes.id_cancao) AS cancoes,
-COUNT(DISTINCT artistas.id_artista) AS artistas,
-COUNT(DISTINCT albuns.id_album) AS albuns
-
+usuarios.nome_usuario AS `usuario`,
+COUNT(*) AS qt_de_musicas_ouvidas,
+ROUND(SUM(cancoes.duracao / 60), 2) AS 'total_minutos'
 FROM
-    SpotifyClone.cancoes
+    SpotifyClone.historico_de_reproducoes
 INNER JOIN
-    SpotifyClone.artistas ON artistas.id_artista = cancoes.id_artista
+    SpotifyClone.usuarios ON usuarios.id_usuario = historico_de_reproducoes.id_usuario
 INNER JOIN
-    SpotifyClone.albuns ON albuns.id_album = cancoes.id_album;
+    SpotifyClone.cancoes ON cancoes.id_cancao = historico_de_reproducoes.id_cancao
+GROUP BY nome_usuario
+ORDER BY nome_usuario;

@@ -20,10 +20,6 @@ CREATE TABLE SpotifyClone.usuarios(
   CREATE TABLE SpotifyClone.artistas(
       id_artista INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
       nome_artista VARCHAR(45) NOT NULL
-      -- id_album INT NOT NULL,
-      -- album2 INT,
-      --   FOREIGN KEY (id_album) REFERENCES albuns(id_album),
-      --   FOREIGN KEY (album2) REFERENCES albuns(id_album)
   ) engine = InnoDB;
 
   CREATE TABLE SpotifyClone.seguidores(
@@ -121,14 +117,14 @@ VALUES
 INSERT INTO SpotifyClone.cancoes(nome_cancao, duracao, ano_lancamento, id_album, id_artista)
 VALUES
   ('BREAK MY SOUL', 279, 2022, 1, 1),
-  ('VIRGO`S GROOVE', 369, 2022, 1, 1),
+  ('VIRGO’S GROOVE', 369, 2022, 1, 1),
   ('ALIEN SUPERSTAR', 116, 2022, 1, 1),
-  ('Don`t Stop Me Now', 203, 1978, 2, 2),
+  ('Don’t Stop Me Now', 203, 1978, 2, 2),
   ('Under Pressure', 152, 1982, 3, 2),
   ('Como Nossos Pais', 105, 1998, 4, 3),
   ('O Medo de Amar é o Medo de Ser Livre', 207, 2001, 5, 3),
   ('Samba em Paris', 267, 2003, 6, 4),
-  ('The Bard`s Song', 244, 2007, 7, 5),
+  ('The Bard’s Song', 244, 2007, 7, 5),
   ('Feeling Good', 100, 2012, 8, 6);
 
 INSERT INTO SpotifyClone.historico_de_reproducoes(id_usuario, id_cancao, data_reproducao)
